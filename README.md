@@ -106,6 +106,12 @@ Este proyecto consiste en el desarrollo de un modelo de clasificación binaria p
 
 ---
 
+## 📜 Modelo base
+
+- [Modelo base entrenado](Models/chanchitos_model2.keras)
+
+---
+
 ## Próximos pasos
 
 - Implementación de visualizaciones Grad-CAM para errores detectados.
