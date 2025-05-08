@@ -101,7 +101,7 @@ Este proyecto consiste en el desarrollo de un modelo de clasificación binaria p
 
 ## 📜 Scripts del Proyecto
 
-- [Entrenamiento modelo base v2](scripts/Código para train_model_v2.ipynb)
+- [Entrenamiento modelo base v2](scripts/Código_para_train_model_v2.ipynb)
 - [Evaluación del modelo base v2](scripts/VeridficaciónDeModelos.ipynb)
 
 ---
