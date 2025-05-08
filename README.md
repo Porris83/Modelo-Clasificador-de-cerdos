@@ -99,6 +99,13 @@ Este proyecto consiste en el desarrollo de un modelo de clasificación binaria p
 
 ---
 
+## 📜 Scripts del Proyecto
+
+- [Entrenamiento modelo base v2](scripts/train_model_v2.ipynb)
+- [Evaluación del modelo base v2](scripts/VeridficaciónDeModelos.ipynb)
+
+---
+
 ## Próximos pasos
 
 - Implementación de visualizaciones Grad-CAM para errores detectados.
