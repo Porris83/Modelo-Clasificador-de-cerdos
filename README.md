@@ -78,6 +78,8 @@ Este proyecto consiste en el desarrollo de un modelo de clasificación binaria p
 
 ### Matriz de Confusión
 
+(Se muestra la clasificación de todo el conjunto de validación)
+
 |                      | Predijo Cerdo | Predijo No Cerdo |
 |----------------------|---------------|-----------------|
 | **Real Cerdo**        | 293           | 7               |
@@ -86,6 +88,9 @@ Este proyecto consiste en el desarrollo de un modelo de clasificación binaria p
 ---
 
 ### Matriz de Confusión
+
+(Gráfico adicional analizando los errores de baja y alta confianza de las predicciones)
+
 ![Matriz de Confusión](images/Matriz%20de%20confusión.png)
 ---
 
