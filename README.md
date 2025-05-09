@@ -72,7 +72,7 @@ Este proyecto consiste en el desarrollo de un modelo de clasificación binaria p
 ---
 
 ### Datos Generales
-![Datos Generales](images/Datos_generales.png)
+![Datos Generales](images/Datos_generales%20.png)
 
 ---
 
@@ -107,7 +107,7 @@ Este proyecto consiste en el desarrollo de un modelo de clasificación binaria p
 ## 📜 Scripts del Proyecto
 
 - [Entrenamiento modelo base v2](scripts/EntrenamientoDelModelo.ipynb)
-- [Evaluación del modelo base v2](scripts/VeridficaciónDeModelos.ipynb)
+- [Evaluación del modelo base v2](scripts/VerificaciónDeModelos.ipynb)
 
 ---
 
