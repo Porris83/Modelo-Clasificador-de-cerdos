@@ -48,7 +48,7 @@ Este proyecto consiste en el desarrollo de un modelo de clasificación binaria p
 ---
 
 ### Datos del Modelo
-![Datos del Modelo](images/Datos%20del%20modelo.png)
+![Datos del Modelo](images/Datos_del_modelo.png)
 
 ---
 
@@ -67,12 +67,12 @@ Este proyecto consiste en el desarrollo de un modelo de clasificación binaria p
 ---
 
 ### Resultados Generales
-![Resultados Generales](images/Resultados%20generales.png)
+![Resultados Generales](images/Resultados_generales.png)
 
 ---
 
 ### Datos Generales
-![Datos Generales](images/Datos%20generales%20.png)
+![Datos Generales](images/Datos_generales.png)
 
 ---
 
@@ -91,7 +91,7 @@ Este proyecto consiste en el desarrollo de un modelo de clasificación binaria p
 
 (Gráfico adicional analizando los errores de baja y alta confianza de las predicciones)
 
-![Matriz de Confusión](images/Matriz%20de%20confusión.png)
+![Matriz de Confusión](images/Matriz_de_confusión.png)
 ---
 
 
@@ -106,14 +106,14 @@ Este proyecto consiste en el desarrollo de un modelo de clasificación binaria p
 
 ## 📜 Scripts del Proyecto
 
-- [Entrenamiento modelo base v2](Scripts/EntrenamientoDelModelo.ipynb)
-- [Evaluación del modelo base v2](Scripts/VeridficaciónDeModelos.ipynb)
+- [Entrenamiento modelo base v2](scripts/EntrenamientoDelModelo.ipynb)
+- [Evaluación del modelo base v2](scripts/VeridficaciónDeModelos.ipynb)
 
 ---
 
 ## 📜 Modelo base
 
-- [Modelo base entrenado](Models)
+- [Modelo base entrenado](models)
 
 ---
 
