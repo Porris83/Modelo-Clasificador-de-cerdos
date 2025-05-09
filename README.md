@@ -91,7 +91,7 @@ Este proyecto consiste en el desarrollo de un modelo de clasificación binaria p
 
 (Gráfico adicional analizando los errores de baja y alta confianza de las predicciones)
 
-![Matriz de Confusión](images/Matriz_de_confusión.png)
+![Matriz de Confusión](images/Matriz%20de%20confusión.png)
 ---
 
 
