@@ -111,10 +111,12 @@ Este proyecto tiene como objetivo entrenar y evaluar un modelo de clasificación
 
 | Matriz de Confusión | Arquitectura del Modelo |
 |----------------------|-------------------------|
-| ![Matriz de Confusión](images/V.5/V.5_Matriz_de_confusión.png) | ![Modelo Reentrenado](images/V.5/Modelo-reentrenado.png) |
+| ![Matriz de Confusión](images/V.5/V.5_Matriz_de_confusión.png) | ![Modelo Reentrenado](images/V.5/V.5_Datos_del_Modelo.png) |
 
 📉 Izquierda: evolución de la pérdida (loss)  
 📈 Derecha: evolución de la exactitud (accuracy) durante entrenamiento y validación.
+
+![Modelo Reentrenado](images/V.5/Modelo-reentrenado.png)
 
 ---
 
