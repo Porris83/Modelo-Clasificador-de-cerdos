@@ -150,12 +150,13 @@ El fine-tuning mejoró claramente el rendimiento general del modelo, especialmen
 
 ## 📦 Modelos entrenados
 
-- [Modelo base entrenado y Fine-Tuning](models)
+- [Modelo base entrenado](models)
 
-  ⚠️ Debido a restricciones de tamaño en GitHub, el modelo no se incluye en este repositorio. 
+- Modelo base entrenado
 
-Podés descargarlo desde aquí: 
+⚠️ Debido a restricciones de tamaño en GitHub, el modelo no se incluye en este repositorio. 
 
+  Podés descargarlo desde aquí: 
 - 📥 [Descargar modelo fine-tuned (.keras) - Google Drive](https://drive.google.com/file/d/1yj5wmjg_3p04Ek6Zmm01SDZgCWggg7eO/view?usp=sharing)
 
 ---
