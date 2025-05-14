@@ -152,7 +152,7 @@ El fine-tuning mejoró claramente el rendimiento general del modelo, especialmen
 
 - [Modelo base entrenado](models)
 
-- Modelo base entrenado
+- Modelo Fine-Tuning (V.5)
 
 ⚠️ Debido a restricciones de tamaño en GitHub, el modelo no se incluye en este repositorio. 
 
