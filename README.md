@@ -1,19 +1,35 @@
 #  Clasificación de Cerdos - Modelo Base (v2)
 
 ## Introducción
-Este proyecto consiste en el desarrollo de un modelo de clasificación binaria para detectar si una imagen pertenece a un "cerdo" o "no cerdo". El objetivo principal es entrenar y evaluar un modelo base que sirva como referencia para futuros fine-tuning y mejoras.
+Este proyecto tiene como objetivo entrenar y evaluar un modelo de clasificación binaria capaz de distinguir entre imágenes que contienen cerdos (`pig`) y las que no (`non_pig`). Se trabajó con la arquitectura **MobileNetV2**, utilizando **entrenamiento desde cero** en un modelo base (V2) y posteriormente **fine-tuning** en una nueva versión (V5).
 
 ---
 
 ## Dataset Utilizado
 
-- **Entrenamiento:**  
-  - Carpeta `Train/` con 6200 imágenes (balanceadas entre dos clases: cerdo / no cerdo).
-  
-- **Validación:**  
-  - Carpeta `Validation/` con 600 imágenes (300 cerdo y 300 no cerdo), etiquetadas explícitamente en el nombre de archivo.  
-  *(Este dataset se utilizó únicamente para evaluación final, sin formar parte del entrenamiento.)*
+### Dataset de Entrenamiento (Modelo-Base-(V2))
+- **Train**:
+  - 3099 imágenes de `pig`
+  - 3099 imágenes de `non_pig`
+- **Test**:
+  - 634 imágenes de `pig`
+  - 634 imágenes de `non_pig`
 
+### Dataset de Entrenamiento (Fine-Tuning (V5))
+- **Train**:
+  - 1,187 imágenes de `pig`
+  - 1,187 imágenes de `non_pig`
+- **Test**:
+  - 347 imágenes de `pig`
+  - 347 imágenes de `non_pig`
+
+### Dataset de Validación
+- Carpeta `/validation/` con 600 imágenes en total:
+  - 300 imágenes etiquetadas como `pig`
+  - 300 imágenes etiquetadas como `non_pig`
+
+> ⚠️ **Nota**: Se detectaron algunas imágenes mal etiquetadas dentro de `validation/`. Esto será corregido en futuras etapas junto con el análisis Grad-CAM. Este dataset se utilizó únicamente para evaluación final, sin formar parte del entrenamiento.
+               
 ---
 
 ## Configuración del Entorno
@@ -26,74 +42,40 @@ Este proyecto consiste en el desarrollo de un modelo de clasificación binaria p
 
 ## Proceso de Entrenamiento
 
-1. **Montaje de Google Drive** para acceso al dataset.
-2. **Carga de imágenes** con `ImageDataGenerator`, normalización (rescale=1/255).
-3. **Arquitectura utilizada:**  
-   - **Base:** MobileNetV2 (`weights=imagenet`, `include_top=False`)
-   - **Congelamiento de capas base:** Sí (training freeze).
-   - **Capas añadidas:**  
-     - `GlobalAveragePooling2D`
-     - `Dense(128, activation='relu')`
-     - `Dense(1, activation='sigmoid')`
-4. **Compilación del modelo:**  
-   - Optimizador: Adam (default learning rate)
-   - Función de pérdida: `binary_crossentropy`
-   - Métricas: `accuracy`
-5. **Entrenamiento:**  
-   - Épocas: 10
-   - Batch Size: 32
-6. **Guardado del modelo final:**  
-   - Exportado a Google Drive como `chanchitos_model.keras`.
+## 🔧 Modelo Base (V2)
+
+### Configuración del Modelo
+- **Arquitectura**: MobileNetV2 (`weights=imagenet`, `include_top=False`)
+- **Capas añadidas**:
+  - `GlobalAveragePooling2D`
+  - `Dense(128, activation='relu')`
+  - `Dense(1, activation='sigmoid')`
+- **Entrenamiento**:
+  - Capas base congeladas
+  - Épocas: 10
+  - Batch Size: 32
+  - Optimización: Adam (default params)
+  - Pérdida: `binary_crossentropy`
+  - Métrica: `accuracy`
+
+### Resultados del Modelo Base
+- **Accuracy**: 82.5%
+- **Precision**: 83.28%
+- **Recall**: 81.33%
+- **F1-Score**: 82.29%
+- **AUC-ROC**: 0.88
+
+📌 Visualizaciones:
+
+| Datos Generales | Resultados Generales |
+|------------------|----------------------|
+| ![Datos Generales](images/Modelo_base/Datos_generales.png) | ![Resultados Generales](images/Modelo_base/Resultados_generales.png) |
+
+| Matriz de Confusión | Arquitectura del Modelo |
+|----------------------|-------------------------|
+| ![Matriz de Confusión](images/Modelo_base/Matriz_de_confusion.png) | ![Datos del Modelo](images/Modelo_base/Datos_del_modelo.png) |
 
 ---
-
-### Datos del Modelo
-![Datos del Modelo](images/Datos_del_modelo.png)
-
----
-
-
-## Evaluación del Modelo Base (v2)
-
-**Resultados generales sobre el dataset `Validation/`:**
-
-- **Umbral óptimo (basado en AUC):** 0.1325
-- **Precisión general (Accuracy):** 0.8250
-- **Precision:** 0.8328
-- **Recall (Exhaustividad):** 0.8133
-- **F1-Score:** 0.8229
-- **AUC-ROC:** 0.88
-
----
-
-### Resultados Generales
-![Resultados Generales](images/Resultados_generales.png)
-
----
-
-### Datos Generales
-![Datos Generales](images/Datos_generales%20.png)
-
----
-
-### Matriz de Confusión
-
-(Se muestra la clasificación de todo el conjunto de validación)
-
-|                      | Predijo Cerdo | Predijo No Cerdo |
-|----------------------|---------------|-----------------|
-| **Real Cerdo**        | 293           | 7               |
-| **Real No Cerdo**     | 80            | 220             |
-
----
-
-### Matriz de Confusión
-
-(Gráfico adicional analizando los errores de baja y alta confianza de las predicciones)
-
-![Matriz de Confusión](images/Matriz%20de%20confusión.png)
----
-
 
 ## Análisis de Resultados
 
@@ -101,28 +83,90 @@ Este proyecto consiste en el desarrollo de un modelo de clasificación binaria p
 - Se identificaron imágenes de **baja confianza** (outputs cercanos al umbral óptimo) que fueron analizadas.
 - La arquitectura MobileNetV2 congelada permitió un entrenamiento rápido y estable para este primer acercamiento.
 - Se detectó un pequeño margen de error en imágenes de la clase "no cerdo" (mayor cantidad de falsos positivos).
+  
+---
+
+## 🔁 Versión Mejorada (V5 - Fine-Tuning (V2))
+
+### Configuración del Modelo
+- **Método**: Fine-tuning parcial (capas superiores descongeladas)
+- **Modelo base**: MobileNetV2 preentrenado en ImageNet
+- **Entrenamiento**:
+  - Nuevo dataset ampliado
+  - Capas entrenables ajustadas
+  - Data augmentation aplicado automáticamente
+
+### Resultados del Fine-Tuning
+- **Accuracy**: 83%
+- **Precision**: 89.9%
+- **Recall**: 92.0%
+- **F1-Score**: 90.9%
+- **AUC-ROC**: 0.96
+
+📌 Visualizaciones:
+
+| Datos Generales | Resultados Generales |
+|------------------|----------------------|
+| ![Datos Generales](images/V.5/V.5_Datos_generales.png) | ![Resultados Generales](images/V.5/V.5_Resultados_generales.png) |
+
+| Matriz de Confusión | Arquitectura del Modelo |
+|----------------------|-------------------------|
+| ![Matriz de Confusión](images/V.5/V.5_Matriz_de_confusión.png) | ![Modelo Reentrenado](images/V.5/Modelo-reentrenado.png) |
+
+📉 Izquierda: evolución de la pérdida (loss)  
+📈 Derecha: evolución de la exactitud (accuracy) durante entrenamiento y validación.
+
+---
+
+## 🔍 Comparación entre Versiones
+
+| Métrica     | V2 (Modelo Base) | V5 (Fine-Tuned) |
+|-------------|------------------|-----------------|
+| Accuracy    | 82.5%            | 83%             |
+| Precision   | 83.28%           | 89.9%           |
+| Recall      | 81.33%           | 92%             |
+| F1-Score    | 82.29%           | 90.9%           |
+| AUC-ROC     | 0.88             | 0.96            |
+
+📌 **Conclusión**:  
+El fine-tuning mejoró claramente el rendimiento general del modelo, especialmente en el equilibrio entre precisión y recall. Se observa una mejora importante en la detección de `non_pig`, reduciendo el sobreajuste que presentaba la versión base.
+
+---
+
+
+
 
 ---
 
 ## 📜 Scripts del Proyecto
 
-- [Entrenamiento modelo base v2](scripts/EntrenamientoDelModelo.ipynb)
-- [Evaluación del modelo base v2](scripts/VerificaciónDeModelos.ipynb)
-
+- [Entrenamiento modelo base v2](scripts/Modelo_base/EntrenamientoDelModelo.ipynb)
+- [Evaluación del modelo base v2](scripts/Modelo_base/VerificaciónDeModelos.ipynb)
+- [Entrenamiento modelo base v2](scripts/V.5/Fine-Tunnig.ipynb)
+- [Evaluación del modelo base v2](scripts/V.5/Pruebas_V_5.ipynb)
 ---
 
 ## 📜 Modelo base
 
-- [Modelo base entrenado](models)
+- [Modelo base entrenado y Fine-Tunning](models)
 
 ---
 
-## Próximos pasos
+## 🛠️ Pendientes y Futuras Mejoras
 
-- Implementación de visualizaciones Grad-CAM para errores detectados.
-- Fine-tuning de la base MobileNetV2 descongelando capas parciales.
-- Ajustes de hiperparámetros y ampliación del dataset para versiones futuras (v3, v4, v5).
+- [ ] Corrección de etiquetas erróneas en `validation/`
+- [ ] Aplicar Grad-CAM para interpretar mejor los errores
+- [ ] Evaluar nueva versión V6 con ajustes en balance de clases y capas
+- [ ] Agregar nuevos datasets de prueba no vistos
+- [ ] Integrar modelo a la app móvil
 
 ---
 
+## 🙌 Autor
+
+**Ariel Vilche**  
+Estudiante de 2° año - Tecnicatura Universitaria en Desarrollo de Aplicaciones Móviles  
+Proyecto personal con fines de aprendizaje y portfolio.
+
+---
 
