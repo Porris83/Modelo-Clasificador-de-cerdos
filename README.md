@@ -144,13 +144,19 @@ El fine-tuning mejoró claramente el rendimiento general del modelo, especialmen
 
 - [Entrenamiento modelo base v2](scripts/Modelo_base/EntrenamientoDelModelo.ipynb)
 - [Evaluación del modelo base v2](scripts/Modelo_base/VerificaciónDeModelos.ipynb)
-- [Entrenamiento modelo base v2](scripts/V.5/Fine-Tunnig.ipynb)
-- [Evaluación del modelo base v2](scripts/V.5/Pruebas_V_5.ipynb)
+- [Entrenamiento modelo fine-tuned v5](scripts/V.5/Fine-Tunnig.ipynb)
+- [Evaluación del modelo fine-tuned v5](scripts/V.5/Pruebas_V_5.ipynb)
 ---
 
-## 📜 Modelo base
+## 📦 Modelos entrenados
 
-- [Modelo base entrenado y Fine-Tunning](models)
+- [Modelo base entrenado y Fine-Tuning](models)
+
+  ⚠️ Debido a restricciones de tamaño en GitHub, el modelo no se incluye en este repositorio. 
+
+Podés descargarlo desde aquí: 
+
+- 📥 [Descargar modelo fine-tuned (.keras) - Google Drive](https://drive.google.com/file/d/1yj5wmjg_3p04Ek6Zmm01SDZgCWggg7eO/view?usp=sharing)
 
 ---
 
@@ -164,6 +170,13 @@ El fine-tuning mejoró claramente el rendimiento general del modelo, especialmen
 
 ---
 
+## 💻 ¿Cómo correrlo?
+1. Abrí el notebook en Google Colab
+2. Subí el modelo (`.keras`)
+3. Asegurate de tener el dataset cargado en tu Google Drive
+4. ¡Ejecutá!
+
+---
 ## 🙌 Autor
 
 **Ariel Vilche**  
