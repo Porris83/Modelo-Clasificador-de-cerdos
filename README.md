@@ -65,7 +65,7 @@ Este proyecto tiene como objetivo entrenar y evaluar un modelo de clasificación
 - **F1-Score**: 82.29%
 - **AUC-ROC**: 0.88
 
-📌 Visualizaciones:
+Visualizaciones:
 
 | Datos Generales | Resultados Generales |
 |------------------|----------------------|
@@ -86,7 +86,7 @@ Este proyecto tiene como objetivo entrenar y evaluar un modelo de clasificación
   
 ---
 
-## 🔁 Versión Mejorada (V5 - Fine-Tuning (V2))
+## Versión Mejorada (V5 - Fine-Tuning (V2))
 
 ### Configuración del Modelo
 - **Método**: Fine-tuning parcial (capas superiores descongeladas)
@@ -103,7 +103,7 @@ Este proyecto tiene como objetivo entrenar y evaluar un modelo de clasificación
 - **F1-Score**: 90.9%
 - **AUC-ROC**: 0.96
 
-📌 Visualizaciones:
+Visualizaciones:
 
 | Datos Generales | Resultados Generales |
 |------------------|----------------------|
@@ -120,7 +120,7 @@ Este proyecto tiene como objetivo entrenar y evaluar un modelo de clasificación
 
 ---
 
-## 🔍 Comparación entre Versiones
+## Comparación entre Versiones
 
 | Métrica     | V2 (Modelo Base) | V5 (Fine-Tuned) |
 |-------------|------------------|-----------------|
@@ -130,7 +130,7 @@ Este proyecto tiene como objetivo entrenar y evaluar un modelo de clasificación
 | F1-Score    | 82.29%           | 90.9%           |
 | AUC-ROC     | 0.88             | 0.96            |
 
-📌 **Conclusión**:  
+ **Conclusión**:  
 El fine-tuning mejoró claramente el rendimiento general del modelo, especialmente en el equilibrio entre precisión y recall. Se observa una mejora importante en la detección de `non_pig`, reduciendo el sobreajuste que presentaba la versión base.
 
 ---
@@ -140,7 +140,7 @@ El fine-tuning mejoró claramente el rendimiento general del modelo, especialmen
 
 ---
 
-## 📜 Scripts del Proyecto
+## Scripts del Proyecto
 
 - [Entrenamiento modelo base v2](scripts/Modelo_base/EntrenamientoDelModelo.ipynb)
 - [Evaluación del modelo base v2](scripts/Modelo_base/VerificaciónDeModelos.ipynb)
@@ -148,7 +148,7 @@ El fine-tuning mejoró claramente el rendimiento general del modelo, especialmen
 - [Evaluación del modelo fine-tuned v5](scripts/V.5/Pruebas_V_5.ipynb)
 ---
 
-## 📦 Modelos entrenados
+## Modelos entrenados
 
 - [Modelo base entrenado](models)
 
@@ -157,11 +157,11 @@ El fine-tuning mejoró claramente el rendimiento general del modelo, especialmen
 ⚠️ Debido a restricciones de tamaño en GitHub, el modelo no se incluye en este repositorio. 
 
   Podés descargarlo desde aquí: 
-- 📥 [Descargar modelo fine-tuned (.keras) - Google Drive](https://drive.google.com/file/d/1yj5wmjg_3p04Ek6Zmm01SDZgCWggg7eO/view?usp=sharing)
+- [Descargar modelo fine-tuned (.keras) - Google Drive](https://drive.google.com/file/d/1yj5wmjg_3p04Ek6Zmm01SDZgCWggg7eO/view?usp=sharing)
 
 ---
 
-## 🛠️ Pendientes y Futuras Mejoras
+## Pendientes y Futuras Mejoras
 
 - [ ] Corrección de etiquetas erróneas en `validation/`
 - [ ] Aplicar Grad-CAM para interpretar mejor los errores
@@ -171,14 +171,16 @@ El fine-tuning mejoró claramente el rendimiento general del modelo, especialmen
 
 ---
 
-## 💻 ¿Cómo correrlo?
+## ¿Cómo correrlo?
 1. Abrí el notebook en Google Colab
 2. Subí el modelo (`.keras`)
-3. Asegurate de tener el dataset cargado en tu Google Drive
-4. ¡Ejecutá!
+3. Asegurate de tener cargado el dataset /validation con las imágenes.
+4. Ejecutá las celdas en orden y observá los resultados.
+
+ Nota: Si querés probar tu propio dataset, colocá las imágenes en una carpeta con subdirectorios pig/ y non_pig/ (como está estructurado /validation/).
 
 ---
-## 🙌 Autor
+## Autor
 
 **Ariel Vilche**  
 Estudiante de 2° año - Tecnicatura Universitaria en Desarrollo de Aplicaciones Móviles  
