@@ -167,7 +167,7 @@ El fine-tuning mejoró claramente el rendimiento general del modelo, especialmen
 - [ ] Aplicar Grad-CAM para interpretar mejor los errores
 - [ ] Evaluar nueva versión V6 con ajustes en balance de clases y capas
 - [ ] Agregar nuevos datasets de prueba no vistos
-- [ ] Integrar modelo a la app móvil  [modelo en este repositorio](https://github.com/Porris83/GranjaCam)
+- [ ] Integrar modelo a la app móvil   ([App Android])(https://github.com/Porris83/GranjaCam)
 
 ---
 
